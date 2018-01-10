@@ -1,0 +1,10 @@
+{% extends 'Myblog/base.html' %}
+{% load staticfiles %}
+{% block title %}Addpost{% endblock %}
+{% block content %}
+<form action="" method="post">
+  {{post_form.as_p}}
+{%csrf_token%}
+    <button type="submit">add</button>
+</form>
+{% endblock %}

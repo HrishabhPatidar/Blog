@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link type="text/css" href = "{% static 'Myblog/style.css'%}" rel="stylesheet"/>
+</head>
+<body>
+
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

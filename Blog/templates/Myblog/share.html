@@ -1,0 +1,25 @@
+{% extends 'Myblog/base.html'%}
+{% load staticfiles %}
+{%block title%}comment {%endblock%}
+{% block content%}
+
+<h3>comment here</h3>
+{%if send%}
+
+<h2>email send successfully</h2>
+{%else%}
+<form action="" method="post">
+    {%csrf_token%}
+    {% for field in form %}
+    <div>
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" value="send E-mail">send</button>
+</form>
+
+
+
+{%endif%}
+{%endblock%}

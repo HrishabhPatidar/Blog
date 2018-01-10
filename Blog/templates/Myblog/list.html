@@ -1,0 +1,17 @@
+{% extends 'Myblog/base.html' %}
+{% load staticfiles %}
+
+{% block title %} posts {%endblock%}
+{% block content %}
+<a href="/Myblog/addpost/">new post</a>
+{% for post in posts %}
+<a href="{{ post.get_absolute_url }}">
+    <h1>{{post.title}}</h1>
+</a>
+
+{{ post.body|truncatewords:30|linebreaks }}
+<h3>Published by {{post.author}} on {{post.publish}}</h3>
+
+{% endfor %}
+{% include "Myblog/pagination.html" with page=page_obj %}
+{% endblock %}
